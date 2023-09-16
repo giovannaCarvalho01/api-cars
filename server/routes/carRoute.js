@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const carService = require('../service/carService')
+const verifyToken = require('../auth/validationJWT')
 
 router.get('/car', async function(req, res){
     try {
@@ -20,7 +21,7 @@ router.get('/car/:id', async function(req, res){
     }
 });
 
-router.post('/car/add', async function(req, res){
+router.post('/car/add', verifyToken, async function(req, res){
     try {
         const car = req.body;
         const newPost = await carService.postCar(car);
@@ -30,7 +31,7 @@ router.post('/car/add', async function(req, res){
     }
 });
 
-router.put('/car/update/:id', async function(req, res){
+router.put('/car/update/:id', verifyToken, async function(req, res){
     try {
         const car = await carService.updateCar(req.params.id, req.body);
         res.status(200).send(car);
@@ -39,7 +40,7 @@ router.put('/car/update/:id', async function(req, res){
     }
 });
 
-router.delete('/car/delete/:id', async function(req, res){
+router.delete('/car/delete/:id', verifyToken, async function(req, res){
     try {
         const car = await carService.delete(req.params.id);
         res.status(200).send(car);
