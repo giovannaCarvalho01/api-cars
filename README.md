@@ -14,12 +14,12 @@ Todos os métodos POST, PUT e DELETE devem ser autenticados com o token para ser
 
 # Auth:
 
-GET: http://localhost:3000/auth
+GET: https://api-cars-bsh6.onrender.com/auth
 
 # cars:
 
-GET: http://localhost:3000/car
-GETById: http://localhost:3000/car/2
-POST: http://localhost:3000/car/add
-PUT: http://localhost:3000/car/update/1
-DELETE: http://localhost:3000/car/delete/3
+GET: https://api-cars-bsh6.onrender.com/car
+GETById: https://api-cars-bsh6.onrender.com/car/2
+POST: https://api-cars-bsh6.onrender.com/car/add
+PUT: https://api-cars-bsh6.onrender.com/car/update/1
+DELETE: https://api-cars-bsh6.onrender.com/car/delete/3
